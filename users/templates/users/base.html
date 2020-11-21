@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'Users:index' %}">
+                <img src="data:image/png;base64,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" width="50" height="50"> YOUR VAULT
+            </a>
+            
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Home
+                </a>
+                
+                <a class="navbar-item">
+                    Documentation
+                </a>
+                
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        More
+                    </a>
+                    
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            About
+                        </a>
+                        <a class="navbar-item">
+                            Jobs
+                        </a>
+                        <a class="navbar-item">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-dark" href="{% url 'Users:signup' %}">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light" href="{% url 'Users:login' %}">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+</html>

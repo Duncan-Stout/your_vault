@@ -1,0 +1,79 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% if error %}
+<h4>{{ error }}</h4>
+{% endif %}
+
+  <form action="{% url 'Users:signup' %}" method="POST">
+    {% csrf_token %}    
+    {% if error %}
+    <h3 class="is-danger">{{error}}</h3>
+    {% endif %}
+  <div class="field">
+    <label class="label" for="username">Username</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" id="username" name="username" type="text" placeholder="Username" value="" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+    <p class="help is-success">This username is available</p>
+  </div>
+  
+  
+  <div class="field">
+    <label class="label" for="password">Password</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" id="password" name="password" type="password" placeholder="Password" value="" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="password2">Re-enter Password for confirmation</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-success" id="password2" name="password2" type="password" placeholder="Password" value="" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label" for="email">Email</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input is-danger" id="email" name="email" type="email" placeholder="Email input" value="" required>
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+    </div>
+    
+  </div>
+  
+  
+  
+  
+  <div class="field is-grouped">
+    <div class="control">
+      <button  class="button is-link" type="submit">Submit</button>
+    </div>
+    <div class="control">
+      <a class="button is-link is-light" href="{% url 'Users:index' %}" >Cancel</a>
+    </div>
+  </div>
+</form>
+{% endblock %}

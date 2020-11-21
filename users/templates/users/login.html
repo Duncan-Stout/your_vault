@@ -1,0 +1,37 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+{% if error %}
+<h4>{{ error }}</h4>
+{% endif %}
+<div class="field">
+    <form action="{% url 'Users:login' %}" method="post">
+        {% csrf_token %}
+    <p class="control has-icons-left has-icons-right">
+      <input name="username" id="username" class="validate" type="text" placeholder="Username">
+      <label for="username">Username</label>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input name="password" id="password" class="validate" type="password" placeholder="Password">
+      <label for="password">Password</label>
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Login
+      </button>
+    </p>
+    </form> 
+  </div>
+
+
+{% endblock %}
