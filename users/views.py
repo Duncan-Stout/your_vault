@@ -20,7 +20,7 @@ def loginUser(request):
             error = "Username or password is incorrect"
         else:
             login(request, user)
-            return redirect('Users:dashbaord')
+            return redirect('Vault:vault_shelf')
 
     return render(request, 'users/login.html', {'error': error})
 
@@ -56,7 +56,12 @@ def signup(request):
 
 
 
+
+
+
+
+
 @login_required
 def logoutUser(request):
     logout(request)
-    return redirect("vault:index")                                  
+    return redirect("Users:index")                                  
